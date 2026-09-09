@@ -1,0 +1,291 @@
+:root {
+  --ink: #152623;
+  --petrol: #1F5C56;
+  --petrol-dark: #123E3A;
+  --amber: #E3A23D;
+  --mist: #EDF2EF;
+  --bone: #FBFBF9;
+  --line: #D8E3DE;
+  --error: #B3432B;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  margin: 0;
+  background-color: var(--mist);
+  color: var(--ink);
+}
+
+.app-container {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+}
+
+/* --- Header / marca --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-mark {
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.brand-name {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--petrol-dark);
+}
+
+.brand-tagline {
+  font-size: 13px;
+  color: #5B6E68;
+}
+
+.tabs {
+  display: flex;
+  gap: 24px;
+}
+
+.tab {
+  background: none;
+  border: none;
+  padding: 8px 0;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #5B6E68;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.tab.active {
+  color: var(--petrol-dark);
+  border-bottom-color: var(--amber);
+}
+
+.tab:hover {
+  color: var(--petrol-dark);
+}
+
+/* --- Contenido --- */
+.content {
+  margin-top: 32px;
+}
+
+.card {
+  background: var(--bone);
+  padding: 28px;
+  border-radius: 4px;
+  border-left: 4px solid var(--petrol);
+}
+
+.card h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 22px;
+  margin-top: 0;
+  color: var(--petrol-dark);
+}
+
+.form-group, .form-stack {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.form-stack {
+  flex-direction: column;
+  max-width: 420px;
+}
+
+input {
+  padding: 11px 14px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  flex: 1;
+  background: var(--bone);
+  color: var(--ink);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--petrol);
+  box-shadow: 0 0 0 3px rgba(31, 92, 86, 0.15);
+}
+
+button[type="submit"] {
+  padding: 11px 22px;
+  background-color: var(--petrol);
+  color: var(--bone);
+  border: none;
+  border-radius: 4px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+  background-color: var(--petrol-dark);
+}
+
+button[type="submit"]:disabled {
+  background-color: #A9BEB9;
+  cursor: not-allowed;
+}
+
+.jobs-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.job-item {
+  background: var(--mist);
+  border-left: 3px solid var(--amber);
+  padding: 16px 18px;
+  border-radius: 2px;
+}
+
+.job-item h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  color: var(--ink);
+}
+
+.job-item .company {
+  margin: 0 0 8px;
+  font-size: 13px;
+  color: #5B6E68;
+}
+
+.job-item .description {
+  margin: 0 0 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.job-link {
+  display: inline-block;
+  margin-top: 4px;
+  color: var(--petrol-dark);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid var(--amber);
+}
+
+.badge {
+  background: var(--bone);
+  color: var(--petrol-dark);
+  padding: 3px 9px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.plan-output {
+  margin-top: 20px;
+  padding: 18px;
+  background: var(--mist);
+  border-left: 3px solid var(--amber);
+  border-radius: 2px;
+}
+
+.plan-output h3 {
+  margin-top: 0;
+  font-size: 15px;
+  color: var(--petrol-dark);
+}
+
+.plan-output pre {
+  white-space: pre-wrap;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.external-links {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.external-links-title {
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 4px;
+  color: var(--petrol-dark);
+}
+
+.external-links-note {
+  font-size: 13px;
+  color: #5B6E68;
+  margin: 0 0 14px;
+  max-width: 480px;
+}
+
+.external-links-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.external-link-pill {
+  padding: 8px 16px;
+  border: 1.5px solid;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  background: var(--bone);
+  transition: background-color 0.15s ease;
+}
+
+.external-link-pill:hover {
+  background: var(--mist);
+}
+
+.error-text {
+  color: var(--error);
+  font-size: 14px;
+}
+
+.app-footer {
+  margin-top: 48px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  color: #5B6E68;
+}
