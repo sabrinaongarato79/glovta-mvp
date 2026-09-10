@@ -1,4 +1,17 @@
 <svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ESSA Estética Sin Atajos by Paula Andrea">
-  <rect width="280" height="280" fill="#ffffff"/>
-  <image width="280" height="280" preserveAspectRatio="xMidYMid meet" href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEBAYFBQUGBgYHCQ4JCQgICRINDQoOFRIWFhUSFBQXGiEcFxgfGRQUHScdHyIjJSUlFhwpLCgkKyEkJST/2wBDAQYGBgkICREJCREkGBQYJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCT/wAARCAEYARgDASIAAhEBAxEB/8QAHAABAAICAwEAAAAAAAAAAAAAAAUGBAcBAgMI/8QAVhAAAQMDAQQGBQYJBwkGBwAAAQIDBAAFEQYSITFBBxMiUWGBFDJScZEVQqGxwdEIFiMzYnJzgvAkNENTkqLhFyUmN0RjlLKzJ1VXg5PxRVRWZNLi8v/EABkBAQADAQEAAAAAAAAAAAAAAAABAgMEBf/EADQRAAIBAgQEAgkEAgMAAAAAAAABAgMRBBIhMRMiQVEyYRQjM0JxgaGx0QWRwfAVUiRi4f/aAAwDAQACEQMRAD8A+qaUpQClKUApSlAKUpQClKUApSlAKUzQqAGScCgFKxH7vAjbnZjKT3bQJrCd1Xam+D6l/qoNQ2kXjTnLZExSq+daW8HAQ+f3R99c/jlCP9E98B99Rnj3L+jVf9SfpUEnWEAneh8fuj7692tT25w73VI/WSaZ49w8PVXuslqVis3SC/8Am5TRPdtYrJCkqGQQR4VZO5k4tbo5pSlCBSlKAUpSgFKUoBSlKAUpSgFKUoBSlKAUrha0oSVKIAG8kncKq9415DibTUBIlPDdtZwhPnz8qhtLc0p0p1HaCuWhbiW0lS1BKRvJJwBUBcda2uESlpapTg5N8PjVOK77qp4gl15OfVHZbR9lTsDQbLCA9c5YAG8pQcAe9RrPO34Udfo1OlrVlr2RjSdb3KUdmM23HB7htK+n7q8Ewb/AHchSxJWk83Dsp+mrAzcLJbVdTbYvpLw5MI2j/aNZKZN9mD8nEZhoPN1W0r4UyN7selQh7OCXxIOPoiavBdfZb8BlRrORomM2MvzVn3AD66khZpj++VdpB70tDYFBpe3k5d694/pumpVOPYzljKr6mCNO2Jnc5LB/WeSKfJGnAcelN5/bipRGnrUjhCaPiQT9ddzZLaf9hj/ANgVbJHsZekVf9mRfyJY1+pLT5PCuDpSI4MszFZ8lfVUkrT1qV/sLI9wxXkrS1tJyhDrR70OEVDpxfQlYmqveIt3SclG9p9tfgcisdUG62/elLyQObasj6KmvkOSxvi3WSgDglztiuesvcT12WJiRzbOyr4GqOkuhvHHVNpWZEx9SzY/ZfSHQPaGDUvD1JCkYS4Syo+3w+NeLtxtks9VcI6ozh/rkY+BrHk6XaeR1sGQMHgFHI+NLTW2pObDVPEsrLGlaVpCkkEHgRXNUZTl0sTm8rbT470K+ypm2atjyMNy09Q57XzT91WVRPR6GdTByis0OZeRYKVwlYWkKSQQeBHA1zWhyClKUApSlAKUpQClKUApSlAKUzQ...TRUNCATED..."/>
+  <defs>
+    <linearGradient id="rose" x1="35" y1="25" x2="245" y2="255" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#efb1b4"/>
+      <stop offset="1" stop-color="#c8787d"/>
+    </linearGradient>
+  </defs>
+  <circle cx="140" cy="140" r="126" fill="#fff" stroke="url(#rose)" stroke-width="6"/>
+  <circle cx="140" cy="140" r="114" fill="none" stroke="#9a9a9a" stroke-width="2"/>
+  <circle cx="140" cy="140" r="96" fill="none" stroke="#df9297" stroke-width="2"/>
+  <circle cx="20" cy="140" r="5" fill="#9a9a9a"/>
+  <circle cx="260" cy="140" r="5" fill="#9a9a9a"/>
+  <text x="140" y="64" text-anchor="middle" fill="#323232" font-family="Arial, sans-serif" font-size="17" letter-spacing="5">ESTÉTICA SIN ATAJOS</text>
+  <text x="140" y="176" text-anchor="middle" fill="#2f2f2f" font-family="Georgia, serif" font-size="72">ESSA</text>
+  <path d="M136 92c15 10 31 25 38 42-17-7-30-17-38-31-8 14-21 24-38 31 8-17 23-32 38-42Z" fill="url(#rose)" opacity=".88"/>
+  <text x="140" y="231" text-anchor="middle" fill="#323232" font-family="Arial, sans-serif" font-size="15" letter-spacing="4">BY PAULA ANDREA</text>
 </svg>
