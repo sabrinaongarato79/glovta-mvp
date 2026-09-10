@@ -1,67 +1,108 @@
 import React, { useState } from 'react';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_URL = import.meta.env.VITE_API_URL || '';
 
-function LearningPath() {
-  const [targetRole, setTargetRole] = useState('');
-  const [currentSkills, setCurrentSkills] = useState('');
+function localPlan(targetRole, currentSkills) {
+  return {
+    role: targetRole,
+    plan:
+      `Semana 1 · Diagnóstico de brechas para ${targetRole}\n` +
+      `Semana 2 · Fundamentos prioritarios según: ${currentSkills || 'perfil inicial'}\n` +
+      'Semana 3 · Práctica guiada y proyecto aplicado\n' +
+      'Semana 4 · Portfolio, CV y preparación de entrevistas'
+  };
+}
+
+function LearningPath({ profile }) {
+  const [targetRole, setTargetRole] = useState(profile.goal || '');
+  const [currentSkills, setCurrentSkills] = useState((profile.skills || []).join(', '));
   const [plan, setPlan] = useState(null);
+  const [mode, setMode] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const handleGenerate = async (e) => {
-    e.preventDefault();
+  const handleGenerate = async (event) => {
+    event.preventDefault();
+    if (!targetRole.trim()) {
+      setError('Indicá el puesto u objetivo profesional.');
+      return;
+    }
+
     setLoading(true);
     setError(null);
+
+    if (!API_URL) {
+      setPlan(localPlan(targetRole.trim(), currentSkills.trim()));
+      setMode('Ruta simulada por el MVP. La IA real todavía no está conectada en producción.');
+      setLoading(false);
+      return;
+    }
+
     try {
       const response = await fetch(`${API_URL}/api/learning-path`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ targetRole, currentSkills }),
+        body: JSON.stringify({ targetRole, currentSkills })
       });
       const result = await response.json();
-      if (result.success) {
-        setPlan(result.data);
-      } else {
-        setError(result.message || 'No se pudo generar la ruta');
-      }
-    } catch (err) {
-      setError('Error de conexión con el servidor');
+      if (!result.success) throw new Error(result.message || 'No se pudo generar la ruta');
+      setPlan(result.data);
+      setMode('Ruta generada por el servicio actual del backend. En esta versión, el servicio de IA está simulado.');
+    } catch {
+      setPlan(localPlan(targetRole.trim(), currentSkills.trim()));
+      setMode('El backend no respondió; se muestra una ruta local de contingencia.');
+      setError('La integración del backend no está disponible.');
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="card">
-      <h2>Generador de Ruta de Aprendizaje (IA)</h2>
-      <form onSubmit={handleGenerate} className="form-stack">
-        <input
-          type="text"
-          placeholder="Puesto objetivo (Ej: Full Stack Developer)"
-          value={targetRole}
-          onChange={(e) => setTargetRole(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Habilidades actuales (Ej: HTML, CSS, JavaScript básico)"
-          value={currentSkills}
-          onChange={(e) => setCurrentSkills(e.target.value)}
-        />
-        <button type="submit" disabled={loading}>
-          {loading ? 'Generando Plan...' : 'Crear Plan Personalizado'}
+    <section className="module-card">
+      <div className="module-heading">
+        <span className="module-kicker">LEARNING PATH</span>
+        <h2>Convertí una brecha en un próximo paso concreto.</h2>
+        <p>
+          El MVP genera una ruta de aprendizaje a partir del objetivo profesional y las habilidades actuales.
+          La IA real queda como integración posterior sin cambiar la interfaz del servicio.
+        </p>
+      </div>
+
+      <form onSubmit={handleGenerate} className="learning-form">
+        <label>
+          Objetivo profesional
+          <input
+            type="text"
+            placeholder="Ej: Full Stack Developer"
+            value={targetRole}
+            onChange={(event) => setTargetRole(event.target.value)}
+          />
+        </label>
+        <label>
+          Habilidades actuales
+          <input
+            type="text"
+            placeholder="HTML, CSS, JavaScript..."
+            value={currentSkills}
+            onChange={(event) => setCurrentSkills(event.target.value)}
+          />
+        </label>
+        <button type="submit" className="primary-action" disabled={loading}>
+          {loading ? 'Generando...' : 'Crear ruta'}
         </button>
       </form>
 
       {error && <p className="error-text">{error}</p>}
+      {mode && <p className="mode-note">{mode}</p>}
 
       {plan && (
         <div className="plan-output">
-          <h3>Objetivo: {plan.role}</h3>
+          <span className="plan-label">OBJETIVO</span>
+          <h3>{plan.role}</h3>
           <pre>{plan.plan}</pre>
         </div>
       )}
-    </div>
+    </section>
   );
 }
 
