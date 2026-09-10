@@ -105,11 +105,11 @@ function App() {
       <main id="main-content">
         <section className="hero" id="inicio">
           <div className="hero-copy">
-            <span className="eyebrow">EMPLEABILIDAD INCLUSIVA · GLOBAL</span>
+            <span className="eyebrow">EMPLEABILIDAD INCLUSIVA · VISIÓN GLOBAL</span>
             <h1>Talento real.<br /><span>Oportunidades globales.</span></h1>
             <p>
               Glovta conecta perfil profesional, oportunidades, matching explicable
-              y aprendizaje en una experiencia inclusiva y preparada para crecer.
+              y aprendizaje en una experiencia inclusiva, pensada para personas y organizaciones de distintos mercados.
             </p>
 
             <div className="hero-actions">
@@ -131,6 +131,22 @@ function App() {
             <div className="hero-stat stat-one"><strong>01</strong><span>Perfil</span></div>
             <div className="hero-stat stat-two"><strong>02</strong><span>Match</span></div>
             <div className="hero-stat stat-three"><strong>03</strong><span>Aprendizaje</span></div>
+          </div>
+        </section>
+
+        <section className="demo-strip" aria-label="Aliado institucional">
+          <div className="demo-strip-heading">
+            <span className="eyebrow">ALIADO INSTITUCIONAL</span>
+            <p>Construimos vínculos para ampliar el acceso a formación, talento y oportunidades.</p>
+          </div>
+          <div className="demo-brands" style={{ gridTemplateColumns: '1fr' }}>
+            <div className="demo-brand" style={{ borderLeft: 'none' }}>
+              <span className="demo-mark">ES</span>
+              <span>
+                <strong>ESSA</strong>
+                <small>Aliado institucional de Glovta</small>
+              </span>
+            </div>
           </div>
         </section>
 
